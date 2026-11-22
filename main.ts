@@ -57,10 +57,10 @@ else if(f===52){if(!t)return R(8);pc=C[--t];}
 else if(f===64){const w=D[s-1];if(w<0||w>255)return R(6);D[s-1]=M[w];}
 else if(f===65){const w=D[s-1],z=D[s-2];if(w<0||w>255)return R(6);s-=2;M[w]=z;}
 else if(f===80){
-const str=String(D[s-1]);
-if(l+str.length>65536)return R(11);
+const str=String(D[s-1]),L=str.length;
+if(l+L>65536)return R(11);
 s--;
-for(let j=0;j<str.length;j++)o[l++]=str.charCodeAt(j);
+for(let j=0;j<L;j++)o[l++]=str.charCodeAt(j);
 }
 else if(f===81){if(l+1>65536)return R(11);o[l++]=D[--s]&255;}
 else if(f===82)D[s++]=i<q.length?q[i++]:-1;
